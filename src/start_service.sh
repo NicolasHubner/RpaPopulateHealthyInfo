@@ -14,8 +14,8 @@ until curl -u elastic:$ES_PASSWORD -X GET http://localhost:9200/_cluster/health?
 done
 
 # Run the curl command to set Kibana system user password
-curl -u elastic:$ES_PASSWORD \
+curl -u elastic:<ES_PASSWORD> \
   -X POST \
   http://localhost:9200/_security/user/kibana_system/_password \
-  -d '{"password":"'"$KIBANA_PASSWORD"'"}' \
+  -d '{"password":"'"<KIB_PASSWORD>"'"}' \
   -H 'Content-Type: application/json'
